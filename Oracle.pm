@@ -183,11 +183,7 @@ sub _process_css {
 sub _set_tree {
 	my ($self, $tree) = @_;
 
-	if (! defined $tree) {
-		return;
-	}
-
-	if (! blessed($tree) || ! $tree->isa('Tree')) {
+	if (! defined $tree || ! blessed($tree) || ! $tree->isa('Tree')) {
 		err 'Data object for tree is not valid.';
 	}
 
