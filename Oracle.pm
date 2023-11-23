@@ -187,7 +187,7 @@ sub _set_tree {
 		return;
 	}
 
-	if (! blessed($tree) && ! $tree->isa('Tree')) {
+	if (! blessed($tree) || ! $tree->isa('Tree')) {
 		err 'Data object for tree is not valid.';
 	}
 
