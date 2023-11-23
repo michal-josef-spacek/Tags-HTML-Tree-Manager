@@ -31,6 +31,7 @@ test_requires 'Tags::Output::Raw' => 0;
 test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
+test_requires 'Tree' => 0;
 tests_recursive;
 version '0.01';
 

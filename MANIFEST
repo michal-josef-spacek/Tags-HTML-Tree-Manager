@@ -19,6 +19,7 @@ README
 t/Tags-HTML-Tree-Oracle/01-use.t
 t/Tags-HTML-Tree-Oracle/02-version.t
 t/Tags-HTML-Tree-Oracle/03-new.t
-t/Tags-HTML-Tree-Oracle/04-process.t
+t/Tags-HTML-Tree-Oracle/04-init.t
+t/Tags-HTML-Tree-Oracle/05-process.t
 xt/Tags-HTML-Tree-Oracle/01-pod_coverage.t
 xt/Tags-HTML-Tree-Oracle/02-pod.t
