@@ -3,7 +3,7 @@ use warnings;
 
 use Tags::HTML::Tree::Oracle;
 use Tags::Output::Indent;
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 use Tree;
 
@@ -149,3 +149,20 @@ $right_ret = <<'END';
 END
 chomp $right_ret;
 is($ret, $right_ret, 'Root tree with two children.');
+
+# Test.
+$tags = Tags::Output::Indent->new;
+$tree = Tree->new;
+$tree->meta({
+	'id' => 1,
+	'parent' => '',
+});
+$obj = Tags::HTML::Tree::Oracle->new(
+	'tags' => $tags,
+);
+$obj->process;
+$ret = $tags->flush(1);
+$right_ret = <<'END';
+END
+chomp $right_ret;
+is($ret, $right_ret, 'No init, blank output.');
