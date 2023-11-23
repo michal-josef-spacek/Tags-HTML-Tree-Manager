@@ -6,7 +6,7 @@ use Error::Pure::Utils qw(clean);
 use Tags::HTML::Tree::Oracle;
 use Tags::Output::Indent;
 use Test::MockObject;
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 use Tree;
 
@@ -53,4 +53,16 @@ eval {
 };
 is($EVAL_ERROR, "Data object for tree is not valid.\n",
 	"Data object for tree is not valid (bad object).");
+clean();
+
+# Test.
+$tags = Tags::Output::Indent->new;
+$obj = Tags::HTML::Tree::Oracle->new(
+	'tags' => $tags,
+);
+eval {
+	$obj->prepare(Test::MockObject->new);
+};
+is($EVAL_ERROR, "Data object for tree is not valid.\n",
+	"Data object for tree is not valid (undef).");
 clean();
