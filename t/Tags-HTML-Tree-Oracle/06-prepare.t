@@ -6,17 +6,9 @@ use Error::Pure::Utils qw(clean);
 use Tags::HTML::Tree::Oracle;
 use Tags::Output::Indent;
 use Test::MockObject;
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 8;
 use Test::NoWarnings;
 use Tree;
-
-# Test.
-#my $tags = Tags::Output::Indent->new;
-#my $tree = Tree->new;
-#my $obj = Tags::HTML::Tree::Oracle->new(
-#	'tags' => $tags,
-#);
-#$obj->prepare($tree);
 
 # Test.
 my $tags = Tags::Output::Indent->new;
@@ -65,4 +57,49 @@ eval {
 };
 is($EVAL_ERROR, "Data object for tree is not valid.\n",
 	"Data object for tree is not valid (undef).");
+clean();
+
+# Test.
+$tags = Tags::Output::Indent->new;
+$tree = Tree->new;
+$obj = Tags::HTML::Tree::Oracle->new(
+	'tags' => $tags,
+);
+eval {
+	$obj->prepare($tree);
+};
+is($EVAL_ERROR, "Tree object doesn't contain required meta data.\n",
+	"Tree object doesn't contain required meta data (no metadata).");
+clean();
+
+# Test.
+$tags = Tags::Output::Indent->new;
+$tree = Tree->new;
+$tree->meta({
+	'parent' => '',
+});
+$obj = Tags::HTML::Tree::Oracle->new(
+	'tags' => $tags,
+);
+eval {
+	$obj->prepare($tree);
+};
+is($EVAL_ERROR, "Tree object doesn't contain required meta data.\n",
+	"Tree object doesn't contain required meta data (only parent metadata).");
+clean();
+
+# Test.
+$tags = Tags::Output::Indent->new;
+$tree = Tree->new;
+$tree->meta({
+	'id' => '',
+});
+$obj = Tags::HTML::Tree::Oracle->new(
+	'tags' => $tags,
+);
+eval {
+	$obj->prepare($tree);
+};
+is($EVAL_ERROR, "Tree object doesn't contain required meta data.\n",
+	"Tree object doesn't contain required meta data (only id metadata).");
 clean();

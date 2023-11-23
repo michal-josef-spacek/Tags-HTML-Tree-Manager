@@ -186,6 +186,11 @@ sub _set_tree {
 	if (! defined $tree || ! blessed($tree) || ! $tree->isa('Tree')) {
 		err 'Data object for tree is not valid.';
 	}
+	if (! exists $tree->meta->{'parent'}
+		|| ! exists $tree->meta->{'id'}) {
+
+		err "Tree object doesn't contain required meta data.";
+	}
 
 	$self->{'_tree'} = $tree;
 

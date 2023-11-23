@@ -1,11 +1,13 @@
 TODO
 ====
-1. Resolve print of Tree->new;
-This is bad data structure, missing 'parent' and 'id' meta data.
 3. Add doc.
 4.
 
 Applied
 =======
 2. Tests.
+OK [20231123] skim
+
+1. Resolve print of Tree->new;
+This is bad data structure, missing 'parent' and 'id' meta data.
 OK [20231123] skim
