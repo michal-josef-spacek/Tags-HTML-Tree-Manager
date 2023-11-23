@@ -1,6 +1,7 @@
 TODO
 ====
 1. Resolve print of Tree->new;
+This is bad data structure, missing 'parent' and 'id' meta data.
 3.
 
 Applied
