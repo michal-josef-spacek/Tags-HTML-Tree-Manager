@@ -188,7 +188,7 @@ sub _set_tree {
 	}
 
 	if (! blessed($tree) && ! $tree->isa('Tree')) {
-		err 'Data object for address is not valid.';
+		err 'Data object for tree is not valid.';
 	}
 
 	$self->{'_tree'} = $tree;
