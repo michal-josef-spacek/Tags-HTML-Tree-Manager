@@ -3,9 +3,11 @@ abstract: 'Tags helper for tree manager.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
+  CSS::Struct::Output::Indent: 0
   English: 0
   Error::Pure::Utils: 0
   ExtUtils::MakeMaker: 6.36
+  Tags::Output::Indent: 0
   Tags::Output::Raw: 0
   Test::MockObject: 0
   Test::More: 0
