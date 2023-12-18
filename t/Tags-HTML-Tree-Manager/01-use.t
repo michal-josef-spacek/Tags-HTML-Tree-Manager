@@ -7,8 +7,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('Tags::HTML::Tree::Oracle');
+	use_ok('Tags::HTML::Tree::Manager');
 }
 
 # Test.
-require_ok('Tags::HTML::Tree::Oracle');
+require_ok('Tags::HTML::Tree::Manager');

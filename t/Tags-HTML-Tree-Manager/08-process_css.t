@@ -2,13 +2,13 @@ use strict;
 use warnings;
 
 use CSS::Struct::Output::Indent;
-use Tags::HTML::Tree::Oracle;
+use Tags::HTML::Tree::Manager;
 use Test::More 'tests' => 3;
 use Test::NoWarnings;
 
 # Test.
 my $css = CSS::Struct::Output::Indent->new;
-my $obj = Tags::HTML::Tree::Oracle->new(
+my $obj = Tags::HTML::Tree::Manager->new(
 	'css' => $css,
 );
 $obj->process_css;
@@ -40,7 +40,7 @@ is($ret, $right_ret, 'Fetch CSS code (default CSS class name).');
 
 # Test.
 $css = CSS::Struct::Output::Indent->new;
-$obj = Tags::HTML::Tree::Oracle->new(
+$obj = Tags::HTML::Tree::Manager->new(
 	'css_tree' => 'foo',
 	'css' => $css,
 );

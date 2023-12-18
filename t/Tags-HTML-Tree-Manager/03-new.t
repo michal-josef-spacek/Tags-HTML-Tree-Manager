@@ -3,25 +3,25 @@ use warnings;
 
 use English;
 use Error::Pure::Utils qw(clean);
-use Tags::HTML::Tree::Oracle;
+use Tags::HTML::Tree::Manager;
 use Tags::Output::Raw;
 use Test::MockObject;
 use Test::More 'tests' => 8;
 use Test::NoWarnings;
 
 # Test.
-my $obj = Tags::HTML::Tree::Oracle->new;
-isa_ok($obj, 'Tags::HTML::Tree::Oracle');
+my $obj = Tags::HTML::Tree::Manager->new;
+isa_ok($obj, 'Tags::HTML::Tree::Manager');
 
 # Test.
-$obj = Tags::HTML::Tree::Oracle->new(
+$obj = Tags::HTML::Tree::Manager->new(
 	'tags' => Tags::Output::Raw->new,
 );
-isa_ok($obj, 'Tags::HTML::Tree::Oracle');
+isa_ok($obj, 'Tags::HTML::Tree::Manager');
 
 # Test.
 eval {
-	Tags::HTML::Tree::Oracle->new(
+	Tags::HTML::Tree::Manager->new(
 		'tags' => 'bad_tags',
 	);
 };
@@ -31,7 +31,7 @@ clean();
 
 # Test.
 eval {
-	Tags::HTML::Tree::Oracle->new(
+	Tags::HTML::Tree::Manager->new(
 		'tags' => 0,
 	);
 };
@@ -42,7 +42,7 @@ clean();
 # Test.
 my $test_obj = Test::MockObject->new;
 eval {
-	Tags::HTML::Tree::Oracle->new(
+	Tags::HTML::Tree::Manager->new(
 		'tags' => $test_obj,
 	);
 };
@@ -52,7 +52,7 @@ clean();
 
 # Test.
 eval {
-	Tags::HTML::Tree::Oracle->new(
+	Tags::HTML::Tree::Manager->new(
 		'css' => 'bad_css',
 	);
 };
@@ -62,7 +62,7 @@ clean();
 
 # Test.
 eval {
-	Tags::HTML::Tree::Oracle->new(
+	Tags::HTML::Tree::Manager->new(
 		'css' => 0,
 	);
 };

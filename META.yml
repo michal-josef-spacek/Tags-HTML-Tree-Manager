@@ -1,5 +1,5 @@
 ---
-abstract: 'Tags helper for Oracle tree manager.'
+abstract: 'Tags helper for tree manager.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
@@ -20,7 +20,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Tags-HTML-Tree-Oracle
+name: Tags-HTML-Tree-Manager
 no_index:
   directory:
     - inc
@@ -33,8 +33,8 @@ requires:
   Tags::HTML: 0
   perl: 5.8.0
 resources:
-  bugtracker: https://github.com/michal-josef-spacek/Tags-HTML-Tree-Oracle/issues
-  homepage: https://github.com/michal-josef-spacek/Tags-HTML-Tree-Oracle
+  bugtracker: https://github.com/michal-josef-spacek/Tags-HTML-Tree-Manager/issues
+  homepage: https://github.com/michal-josef-spacek/Tags-HTML-Tree-Manager
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/michal-josef-spacek/Tags-HTML-Tree-Oracle
+  repository: git://github.com/michal-josef-spacek/Tags-HTML-Tree-Manager
 version: '0.01'

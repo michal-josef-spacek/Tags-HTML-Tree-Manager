@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Tags::HTML::Tree::Oracle;
+use Tags::HTML::Tree::Manager;
 use Tags::Output::Indent;
 use Test::More 'tests' => 4;
 use Test::NoWarnings;
@@ -10,7 +10,7 @@ use Tree;
 # Test.
 #my $tags = Tags::Output::Indent->new;
 #my $tree = Tree->new;
-#my $obj = Tags::HTML::Tree::Oracle->new(
+#my $obj = Tags::HTML::Tree::Manager->new(
 #	'tags' => $tags,
 #);
 #$obj->init($tree);
@@ -28,7 +28,7 @@ $tree->meta({
 	'id' => 1,
 	'parent' => '',
 });
-my $obj = Tags::HTML::Tree::Oracle->new(
+my $obj = Tags::HTML::Tree::Manager->new(
 	'tags' => $tags,
 );
 $obj->init($tree);
@@ -94,7 +94,7 @@ $subtree2->meta({
 	'parent' => 1,
 });
 $tree->add_child($subtree2);
-$obj = Tags::HTML::Tree::Oracle->new(
+$obj = Tags::HTML::Tree::Manager->new(
 	'tags' => $tags,
 );
 $obj->init($tree);
@@ -157,7 +157,7 @@ $tree->meta({
 	'id' => 1,
 	'parent' => '',
 });
-$obj = Tags::HTML::Tree::Oracle->new(
+$obj = Tags::HTML::Tree::Manager->new(
 	'tags' => $tags,
 );
 $obj->process;

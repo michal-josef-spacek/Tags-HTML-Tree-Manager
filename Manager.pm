@@ -1,4 +1,4 @@
-package Tags::HTML::Tree::Oracle;
+package Tags::HTML::Tree::Manager;
 
 use base qw(Tags::HTML);
 use strict;
